@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pump&Exit"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SolanaService="*res://addons/SolanaSDK/Autoload/SolanaService.tscn"
 
 [editor]
 
@@ -21,7 +25,7 @@ movie_writer/movie_file="C:/Users/Thomas/Desktop/movie.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/SolanaSDK/plugin.cfg")
 
 [filesystem]
 

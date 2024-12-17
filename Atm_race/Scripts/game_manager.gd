@@ -4,6 +4,8 @@ class_name GameManager
 @export var start_price:float=20.0
 @export var dump_rate:float=3.0
 
+@export var gui:GUI
+
 var curr_price:float
 
 var game_active:bool=true
@@ -30,11 +32,17 @@ func _process(delta: float) -> void:
 	if curr_price<=0:
 		curr_price=0;
 		game_active=false
-		print("OUCH DUMOED TO 0")
+		lose_game()
+		
+func pump(amount:float)->void:
+	curr_price += amount
 
 func get_curr_price()->float:
 	return curr_price
 
 func win_game() -> void:
 	game_active=false
-	print("WIN!!!")
+	gui.handle_game_win(curr_price)
+	
+func lose_game()->void:
+	gui.handle_game_lose() 

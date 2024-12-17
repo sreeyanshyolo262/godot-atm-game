@@ -1,6 +1,6 @@
 extends Area3D
 
-@onready var collider:CollisionShape3D=$Collision
+@onready var collider:CollisionShape3D=$Collider
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
